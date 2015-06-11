@@ -109,24 +109,9 @@
         results.push(array[i]);
       }
     }
-    console.log(results);
     return results;
   };
-/* Unique = function (array)
- var outputArray = [];
-for (var i = 0; i < array.length; i++) {
-   var array1 = array[i];
-   for (var j = 0; j < array.length; j++) {
-     if (array1 === array[j]) {
-       array.pop(array1);
-     } else {
-       outputArray.push(array1);
-     }
-   }
- }
- console.log(outputArray);
- return outputArray;
-}; (edited) */
+
 
   // Return the results of applying an iterator to each element.
   _.map = function(collection, iterator) {
@@ -216,10 +201,14 @@ for (var i = 0; i < array.length; i++) {
   // Determine whether all of the elements match a truth test.
   _.every = function(collection, iterator) {
     // TIP: Try re-using reduce() here.
-    return _.reduce(collection, function(isTrue, item){
-        iterator(collection);
-    }); 
-    return true;
+
+    return _.reduce(collection, function(item){
+        if(true){
+          return true
+        } else {
+        return false;
+      }
+    });
   };
 
   // Determine whether any of the elements pass a truth test. If no iterator is
