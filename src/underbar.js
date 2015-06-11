@@ -100,28 +100,33 @@
   };
 
   // Produce a duplicate-free version of the array.
-  _.uniq = function(array) {
+ _.uniq = function(array) {
     var results = [];
-    var sortedArray = array.sort();
-
-    
-      for (var i = 0; i < sortedArray.length-1; i++){
-      for (var j = i++; j < sortedArray.length-1; j++){
-        console.log('j is at: ' + j);
-         if (sortedArray[i] === sortedArray[j]){
-          sortedArray.splice(j, 1);
-         }
-       } 
-     }
-   
-    results.push(sortedArray);
-    console.log(results[i]);
+    var match;
+    for (var i = 0; i < array.length; i++){ 
+      match = _.indexOf(array, array[i]);
+      if(match === i){
+        results.push(array[i]);
+      }
+    }
+    console.log(results);
     return results;
   };
-  
-  
-
-
+/* Unique = function (array)
+ var outputArray = [];
+for (var i = 0; i < array.length; i++) {
+   var array1 = array[i];
+   for (var j = 0; j < array.length; j++) {
+     if (array1 === array[j]) {
+       array.pop(array1);
+     } else {
+       outputArray.push(array1);
+     }
+   }
+ }
+ console.log(outputArray);
+ return outputArray;
+}; (edited) */
 
   // Return the results of applying an iterator to each element.
   _.map = function(collection, iterator) {
@@ -180,8 +185,20 @@
   //     return total + number * number;
   //   }); // should be 5, regardless of the iterator function passed in
   //          No accumulator is given so the first element is used.
-  _.reduce = function(collection, iterator, accumulator) {
-  };
+  _.reduce = function(collection, iterator, accumulator) { 
+    if(arguments.length >= 3){
+      _.each(collection, function(element, key, list){
+        accumulator = iterator(accumulator, element, key, list); 
+      });
+    } else {
+      accumulator = collection.shift();
+      _.each(collection, function(element, key, list){
+        accumulator = iterator(accumulator, element, key, list); 
+      });
+    }
+    
+    return accumulator;
+  };  
 
   // Determine if the array or object contains a given value (using `===`).
   _.contains = function(collection, target) {
@@ -199,6 +216,10 @@
   // Determine whether all of the elements match a truth test.
   _.every = function(collection, iterator) {
     // TIP: Try re-using reduce() here.
+    return _.reduce(collection, function(isTrue, item){
+        iterator(collection);
+    }); 
+    return true;
   };
 
   // Determine whether any of the elements pass a truth test. If no iterator is
