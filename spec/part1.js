@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  describe('Part I', function() {
+  /*describe('Part I', function() {
 
     describe('identity', function() {
       var uniqueObject = {};
@@ -265,6 +265,6 @@
       });
 
     });
-  });
+  });*/
 
 }());

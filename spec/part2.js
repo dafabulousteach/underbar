@@ -2,7 +2,7 @@
   'use strict';
 
   describe('Part II', function() {
-    describe('contains', function() {
+    /*describe('contains', function() {
       it('should return false if a collection does not contain a user-specified value', function() {
         expect(_.contains([4, 5, 6], 2)).to.be.false;
       });
@@ -14,9 +14,9 @@
       it('should work on objects', function(){
         expect(_.contains({ a: 4, b: 5, c: 6 }, 5)).to.be.true;
       });
-    });
+    });*/
 
-    describe('every', function() {
+    /*describe('every', function() {
       var isEven = function(num) {
         return num % 2 === 0;
       };
@@ -32,7 +32,7 @@
       it('fails for a collection of all-falsy results', function() {
         expect(_.every([null, 0, undefined], _.identity)).to.be.false;
       });
-/*
+
       it('fails for a collection containing mixed falsy and truthy results', function() {
         expect(_.every([true, false, 1], _.identity)).to.be.false;
         expect(_.every([1, undefined, true], _.identity)).to.be.false;
@@ -56,7 +56,7 @@
         expect(_.every([true, true, true])).to.be.true;
         expect(_.every([true, true, false])).to.be.false;
         expect(_.every([false, false, false])).to.be.false;
-      });*/
+      });
     });
 
     describe('some', function() {
@@ -102,7 +102,7 @@
         expect(_.some([true, true, false])).to.be.true;
         expect(_.some([false, false, false])).to.be.false;
       });
-    });
+    });*/
 
     describe('extend', function() {
       it('returns the first argument', function() {

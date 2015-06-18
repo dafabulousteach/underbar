@@ -198,25 +198,47 @@
   };
 
 
-  // Determine whether all of the elements match a truth test.
-  _.every = function(collection, iterator) {
-    // TIP: Try re-using reduce() here.
-
-    return _.reduce(collection, function(item){
-        if(true){
-          return true
-        } else {
-        return false;
-      }
-    });
+  _.every = function(collection, truthTest) {
+    truthTest = truthTest || _.identity;
+        return _.reduce(collection, function(allTrueSoFar, currentItem) {
+        //What do I want to return true?
+          if(truthTest(currentItem) && allTrueSoFar){ // if currentItem is true && everything else is true
+            return true; // then return true
+          } else { 
+              return false;
+          }
+        }, true); 
+          
   };
-
+ 
   // Determine whether any of the elements pass a truth test. If no iterator is
   // provided, provide a default one
-  _.some = function(collection, iterator) {
+
+  _.some = function(collection, truthTest) {
     // TIP: There's a very clever way to re-use every() here.
+    if(collection){
+      if(truthTest){
+        return _.reduce(collection, function(oneItemTrue, currentItem) {
+          return(Boolean(truthTest(currentItem)) || oneItemTrue); // if one item is true 
+        }, false);
+      } else {
+      return _.reduce(collection, function(oneItemTrue, currentItem) {
+        return(currentItem || oneItemTrue);
+        }, false);
+      }
+    }
+    return false;
   };
 
+/* return _.reduce(collection, function(oneItemTrue, currentItem){
+  if (truthTest(currentItem) || oneItemTrue){
+    return true;
+  } else {
+    return false;
+    }
+},false); 
+
+    */
 
   /**
    * OBJECTS
@@ -237,6 +259,12 @@
   //     bla: "even more stuff"
   //   }); // obj1 now contains key1, key2, key3 and bla
   _.extend = function(obj) {
+
+    for(var i = 0; i < arguments.length; i++){
+      for(var key in arguments[i]){
+        console.log(arguments[i]['key']);
+      }
+    }
   };
 
   // Like extend, but doesn't ever overwrite a key that already
