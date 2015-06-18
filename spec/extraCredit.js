@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  describe('Extra Credit', function() {
+  /*describe('Extra Credit', function() {
     describe('invoke, when provided a function reference', function() {
       it('runs the input function on each item in the array, and returns a list of results', function() {
         var reverse = function(){
@@ -134,5 +134,5 @@
         expect(callback).to.have.been.calledTwice;
       });
     });
-  });
+  });*/
 }());

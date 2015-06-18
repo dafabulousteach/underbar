@@ -102,7 +102,7 @@
         expect(_.some([true, true, false])).to.be.true;
         expect(_.some([false, false, false])).to.be.false;
       });
-    });*/
+    });
 
     describe('extend', function() {
       it('returns the first argument', function() {
@@ -148,7 +148,7 @@
 
         expect(extended).to.eql({ x: 2, a: 1 });
       });
-    });
+    });*/
 
     describe('defaults', function() {
       it('returns the first argument', function() {
@@ -194,7 +194,7 @@
       });
     });
 
-    describe('once', function() {
+    /*describe('once', function() {
       it('should only run a user-defined function if it hasn\'t been run before', function() {
         var num = 0;
         var increment = _.once(function() {
@@ -289,6 +289,6 @@
 
         expect(shuffled).to.not.eql([4, 5, 6]);
       });
-    });
+    });*/
   });
 }());
