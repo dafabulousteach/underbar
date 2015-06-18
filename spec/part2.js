@@ -148,7 +148,7 @@
 
         expect(extended).to.eql({ x: 2, a: 1 });
       });
-    });*/
+    });
 
     describe('defaults', function() {
       it('returns the first argument', function() {
@@ -192,9 +192,9 @@
 
         expect(defaulted.a).to.equal(1);
       });
-    });
+    });*/
 
-    /*describe('once', function() {
+    describe('once', function() {
       it('should only run a user-defined function if it hasn\'t been run before', function() {
         var num = 0;
         var increment = _.once(function() {
@@ -208,7 +208,7 @@
       });
     });
 
-    describe('memoize', function() {
+    /*describe('memoize', function() {
       var add, memoAdd;
 
       beforeEach(function() {
