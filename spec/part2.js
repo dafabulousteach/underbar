@@ -206,7 +206,7 @@
 
         expect(num).to.equal(1);
       });
-    });*/
+    });
 
     describe('memoize', function() {
       var add, memoAdd;
@@ -241,9 +241,9 @@
         memoSpy(10);
         expect(spy).to.have.been.calledOnce;
       });
-    });
+    });*/
 
-    /*describe('delay', function() {
+    describe('delay', function() {
       var callback;
 
       beforeEach(function() {
@@ -269,7 +269,7 @@
       });
     });
 
-    describe('shuffle', function() {
+    /*describe('shuffle', function() {
       it('should not modify the original object', function() {
         var numbers = [4, 5, 6];
         var shuffled = _.shuffle(numbers).sort();
