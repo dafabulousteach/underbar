@@ -192,7 +192,7 @@
 
         expect(defaulted.a).to.equal(1);
       });
-    });*/
+    });
 
     describe('once', function() {
       it('should only run a user-defined function if it hasn\'t been run before', function() {
@@ -206,9 +206,9 @@
 
         expect(num).to.equal(1);
       });
-    });
+    });*/
 
-    /*describe('memoize', function() {
+    describe('memoize', function() {
       var add, memoAdd;
 
       beforeEach(function() {
@@ -243,7 +243,7 @@
       });
     });
 
-    describe('delay', function() {
+    /*describe('delay', function() {
       var callback;
 
       beforeEach(function() {

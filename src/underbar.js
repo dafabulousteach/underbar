@@ -295,6 +295,7 @@
     // TIP: These variables are stored in a "closure scope" (worth researching),
     // so that they'll remain available to the newly-generated function every
     // time it's called.
+    // This can be used as a credit card function so that the card is not run twice
     var alreadyCalled = false;
     var result;
 
@@ -321,6 +322,16 @@
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+    var resultsCache = {}; // Create an object to store arguments and results as a key value pair
+    
+    return function(arg){ 
+      if(resultsCache[arg]){ // if the argument does have a result
+        return resultsCache[arg]; // return the value of the matching key-value pair
+      } else { // else  
+          resultsCache[arg] = func.apply(this, arguments); // invoke the function
+          return resultsCache[arg];// and store the result as a value in the object
+        }
+    };
   };
 
   // Delays a function for the given number of milliseconds, and then calls
@@ -330,6 +341,7 @@
   // parameter. For example _.delay(someFunction, 500, 'a', 'b') will
   // call someFunction('a', 'b') after 500ms
   _.delay = function(func, wait) {
+    // 
   };
 
 
