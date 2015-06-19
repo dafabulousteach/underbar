@@ -2,7 +2,7 @@
   'use strict';
 
   describe('Part II', function() {
-    /*describe('contains', function() {
+    describe('contains', function() {
       it('should return false if a collection does not contain a user-specified value', function() {
         expect(_.contains([4, 5, 6], 2)).to.be.false;
       });
@@ -14,9 +14,9 @@
       it('should work on objects', function(){
         expect(_.contains({ a: 4, b: 5, c: 6 }, 5)).to.be.true;
       });
-    });*/
+    });
 
-    /*describe('every', function() {
+    describe('every', function() {
       var isEven = function(num) {
         return num % 2 === 0;
       };
@@ -241,7 +241,7 @@
         memoSpy(10);
         expect(spy).to.have.been.calledOnce;
       });
-    });*/
+    });
 
     describe('delay', function() {
       var callback;
@@ -269,7 +269,7 @@
       });
     });
 
-    /*describe('shuffle', function() {
+    describe('shuffle', function() {
       it('should not modify the original object', function() {
         var numbers = [4, 5, 6];
         var shuffled = _.shuffle(numbers).sort();
@@ -289,6 +289,6 @@
 
         expect(shuffled).to.not.eql([4, 5, 6]);
       });
-    });*/
+    });
   });
 }());
